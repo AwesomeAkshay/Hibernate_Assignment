@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.library.Books">
+     <class name="com.library.Books" >
+        <id name="book_Id" column="Book_Id">
+            <generator class="native"/>
+        </id>
+        <property name="book_Name"   column="Book_name"/>
+ 		<property name="book_Author"   column="Author_Name"/>
+        
+           
+           
+        <many-to-one name="Lib" class="com.library.Library">
+        <column name="LibId" not-null="true"/>
+           </many-to-one>
+    </class> 
+</hibernate-mapping>
